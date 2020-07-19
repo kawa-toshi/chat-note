@@ -1,0 +1,10 @@
+.Contents
+  .Container
+    %h1 ネタを記録する
+    = form_with model: @note, class: "Form", local:true do |form|
+      %h2 テーマ
+      = form.text_field :theme, class:"Form__theme"
+      %h2 詳細
+      = form.text_area :details, class: "Form__details"
+      = form.submit value:"Record", class: "Form__btn" 
+      

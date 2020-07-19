@@ -1,0 +1,352 @@
+* {
+  box-sizing: border-box;
+}
+.Wrapper{
+  background-color: rgb(116, 17, 17);
+}
+
+.Top-contents{
+  background-color: rgb(210, 192, 192);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 100px;
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  &__title{
+    margin-left: 80px;
+    color: white;
+  }
+}
+
+.Search{
+  margin-right: 20px;
+}
+
+.Middle-contents{
+  display: flex;
+  background-color: rgb(116, 17, 17);
+  
+}
+
+.Sidebar{
+  background-color: orangered;
+  height: 100vh;
+  width:300px;
+  position: fixed;
+  top: 100px;
+}
+
+.btn{
+  display:block;
+  text-decoration: none;
+  text-align: center;
+  margin:20px 0;
+  color:white;
+  transition: all 0.6s ease 0s;
+
+  &:hover{
+    color: khaki;
+    transform: scale(1.1, 1.1);
+  }
+}
+
+.Main{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-left:300px;
+  width: calc(100vw - 300px);
+  height: 100vh;
+  
+
+  &__article{
+    width: 500px;
+    height: 400px;
+    margin: 30px auto 0;
+    border: 1px solid white;
+    color: white;
+  }
+
+  .show{
+    opacity: 1;
+    visibility: visible;
+  }
+   
+  
+  // メイン画面
+  &__article-main{
+    display: flex;
+    height: 200px;
+  }
+  &__article-theme{
+    text-align: center;
+    font-size: 20px;
+    padding: 5px;
+    border: 1px solid white;
+  }
+  &__article-details{
+    padding: 20px;
+    width: 500px;
+  }
+
+  // ハンバーグメニュー
+  .Nav_toggle {
+    display: block;
+    position: relative;
+    width: 1.75rem;
+    height: 1.5rem;
+    left: 20px;
+    top: 8px;
+    cursor: pointer;
+    
+  }
+  .Nav_toggle i {
+    display: block;
+    width: 50px;
+    height: 2px;
+    background-color: red;
+    position: absolute;
+    transition: transform .5s, opacity .5s;
+    
+  }
+  .Nav_toggle i:nth-child(1) {
+    top: 0;
+    
+  }
+  .Nav_toggle i:nth-child(2) {
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    
+  }
+  .Nav_toggle i:nth-child(3) {
+    bottom: 0;
+  }
+  .Nav{
+    margin-top:25px;
+    margin-left:10px;
+    padding-top: 15px;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity .5s, visibility .5s;
+    
+    &__menu-ul{
+      width: 100px;
+    }
+    &__menu-li{
+      color: white;
+      text-decoration: none;
+      &:hover{
+        color: khaki;
+      }
+    }
+  }
+  .Nav_toggle.show i:nth-child(1) {
+    transform: translateY(10px) rotate(-45deg);
+ }
+  .Nav_toggle.show i:nth-child(2) {
+    opacity: 0;
+ }
+  .Nav_toggle.show i:nth-child(3) {
+    transform: translateY(-12px) rotate(45deg);
+ }
+  .show{
+    opacity: 1;
+    visibility: visible;
+  }
+  
+  
+}
+
+
+// 詳細画面
+.Main-show{
+  
+  margin-left:300px;
+  width: calc(100vw - 300px);
+  height: 100vh;
+  
+
+  
+  
+  &__article-show{
+    width: 800px;
+    border: 1px solid white;
+    color: white;
+    margin: 0 auto;
+    height: 75vh;
+    margin-top: 5%;
+  }
+  &__article-main-show{
+    display: flex;
+    height: 200px;
+  }
+  &__article-theme-show{
+    text-align: center;
+    font-size: 20px;
+    padding: 5px;
+    border: 1px solid white;
+  }
+  &__article-details-show{
+    padding: 20px;
+    width: 800px;
+  }
+
+  // ハンバーグメニュー(詳細画面)
+  .Nav_toggle-show {
+    display: block;
+    position: relative;
+    width: 1.75rem;
+    height: 1.5rem;
+    left: 20px;
+    top: 8px;
+    cursor: pointer;
+  }
+  .Nav_toggle-show i {
+    display: block;
+    width: 50px;
+    height: 2px;
+    background-color: red;
+    position: absolute;
+    transition: transform .5s, opacity .5s;
+  }
+  .Nav_toggle-show i:nth-child(1) {
+    top: 0;
+  }
+  .Nav_toggle-show i:nth-child(2) {
+    top: 0;
+    bottom: 0;
+    margin: auto;
+  }
+  .Nav_toggle-show i:nth-child(3) {
+    bottom: 0;
+  }
+  .Nav-show{
+    margin-top:25px;
+    margin-left:10px;
+    padding: 20px;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity .5s, visibility .5s;
+    &__menu-ul-show{
+      width: 100px;
+    }
+    &__menu-li-show{
+      color: white;
+      text-decoration: none;
+      &:hover{
+        color: khaki;
+      }
+    }
+  }
+  .Nav_toggle-show.show i:nth-child(1) {
+    transform: translateY(10px) rotate(-45deg);
+ }
+  .Nav_toggle-show.show i:nth-child(2) {
+    opacity: 0;
+ }
+  .Nav_toggle-show.show i:nth-child(3) {
+    transform: translateY(-12px) rotate(45deg);
+ }
+ .show{
+  opacity: 1;
+  visibility: visible;
+}
+}
+
+
+
+// フワッと浮き上がる演出
+.fadeInUp{
+  opacity: 0;
+  transform: translateY(20px);
+  transition: 1s;
+}
+
+// note登録画面
+
+.Container{
+  background-color: cornflowerblue;
+  width: 50%;
+  margin:0 auto;
+  margin-top: 5%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border: 1px solid orangered;
+  text-align: center;
+  & h1{
+    font-size: 20px;
+    margin: 20px 0;
+  }
+.Form{
+  display: block;
+  &__theme{
+    display: block;
+    width: 80%;
+    margin: 0 auto;
+  }
+  &__details{
+    display: block;
+    width: 100%;
+    height: 400px;
+  }
+  &__btn{
+    display: block;
+    margin: 0 auto;
+  }
+}
+}
+
+
+
+
+// ページネーション
+.pagination{
+  text-align: center;
+  margin: 30px 0;
+  color: white;
+}
+
+.page a{
+  color: white;
+  text-decoration: none;
+  &:hover{
+    color:khaki;
+  }
+}
+
+.next a{
+  color: white;
+  text-decoration: none;
+  &:hover{
+    color:khaki;
+  }
+}
+
+.last a{
+  color: white;
+  text-decoration: none;
+  &:hover{
+    color:khaki;
+  }
+}
+
+.first a{
+  color: white;
+  text-decoration: none;
+  &:hover{
+    color:khaki;
+  }
+}
+
+.prev a{
+  color: white;
+  text-decoration: none;
+  &:hover{
+    color:khaki;
+  }
+}
+

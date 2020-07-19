@@ -1,0 +1,46 @@
+.Wrapper
+
+  .Top-contents
+    %h1.Top-contents__title 
+      = "#{@nickname} の Chat Note"
+    .Search
+      %input{:name => "content", :placeholder => "content", :type => "text"}
+      %input{:name => "search", :value => "Search", :type => "submit"}
+  .Middle-contents
+    .Sidebar
+      %ul
+        %li
+          = link_to 'ネタ帳', root_path ,class: "btn"
+        %li
+          %a{ :href => '#', :class => 'btn' } つながり
+        %li
+          = link_to 'アカウント編集', edit_user_path(current_user) ,class: "btn"
+        %li
+          = link_to 'ログアウト', destroy_user_session_path, method: :delete, class: 'btn'
+        %li
+          = link_to 'ネタを書く',  new_note_path ,class: "btn"
+    
+    .Main-show
+      .Main-show__article-show
+        .Main-show__article-main-show
+          .Main-show__article-main-wrapper-show
+            %h1.Main-show__article-theme-show= @note.theme
+        
+            %p.Main-show__article-details-show= @note.details
+          %span.Nav_toggle-show
+            %i  
+            %i
+            %i
+          %nav.Nav-show
+            %ul.Nav-show__menu-ul-show
+              %li.Nav-show__menu-li-show
+                = link_to '編集', edit_note_path(@note.id), method: :get, class: "Nav-show__menu-li-show"
+              %li.Nav-show__menu-li-show
+                = link_to '削除', note_path(@note.id), method: :delete, class: "Nav-show__menu-li-show"
+              %li.Nav-show__menu-li-show
+                = link_to '詳細', note_path(@note.id), method: :get, class: "Nav-show__menu-li-show"
+      
+      
+
+  
+
