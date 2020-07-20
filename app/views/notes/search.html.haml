@@ -4,8 +4,8 @@
       = "#{@nickname} の Chat Note"
 
     = form_with url: search_notes_path, method: :get, class: "Search", local:true do |form|
-      = form.text_field :keyword
-      = form.submit value:"検索"
+      = form.text_field :keyword, placeholder: "テーマで検索", class: "Search__field"
+      = form.submit value:"検索", class: "Search__btn"
   
   .Middle-contents
     .Sidebar

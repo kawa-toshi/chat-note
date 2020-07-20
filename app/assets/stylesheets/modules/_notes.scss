@@ -22,6 +22,20 @@
 
 .Search{
   margin-right: 20px;
+  &__field{
+    width:250px;
+    margin-right: 5px;
+  }
+  &__btn{
+    width: 80px;
+    background-color: orangered;
+    border: 1px solid orangered;
+    color: white;
+    &:hover{
+      background-color: red;
+      cursor: pointer;
+    }
+  }
 }
 
 .Middle-contents{
@@ -265,10 +279,10 @@
   transition: 1s;
 }
 
-// note登録画面
+// note登録画面 編集画面
 
 .Container{
-  background-color: cornflowerblue;
+  
   width: 50%;
   margin:0 auto;
   margin-top: 5%;
@@ -277,25 +291,39 @@
   justify-content: center;
   border: 1px solid orangered;
   text-align: center;
+  background-color: orangered;
+  color: white;
   & h1{
     font-size: 20px;
     margin: 20px 0;
   }
+  
 .Form{
   display: block;
   &__theme{
     display: block;
     width: 80%;
     margin: 0 auto;
+    border: 1px solid orangered;
   }
   &__details{
     display: block;
-    width: 100%;
+    width: 80%;
     height: 400px;
+    margin: 0 auto;
+    border: 1px solid orangered;
   }
   &__btn{
     display: block;
-    margin: 0 auto;
+    margin: 10px auto;
+    background-color: white;
+    border: 1px solid orangered;
+    width: 80px;
+    
+    &:hover{
+      background-color: khaki;
+      cursor: pointer;
+    }
   }
 }
 }
