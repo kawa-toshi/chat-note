@@ -2,7 +2,7 @@ class NotesController < ApplicationController
   
   def index
     @nickname = current_user.nickname
-    @notes = current_user.notes.page(params[:page]).per(2)
+    @notes = current_user.notes.includes(:user).page(params[:page]).per(2).order("created_at DESC")
   end
 
   def new
