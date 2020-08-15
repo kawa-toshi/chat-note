@@ -3,6 +3,16 @@
 ## アプリ名
 chat-note
 
+## 本番環境
+
+## 概要
+
+## DEMO
+
+## 今後の実装予定の内容
+
+### DB設計
+
 ## notes_tagsテーブル
 
 |Column|Type|Options|
