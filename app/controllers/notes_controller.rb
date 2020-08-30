@@ -13,10 +13,18 @@ class NotesController < ApplicationController
     Note.create!(note_params)
   end
 
+  # def destroy
+  #   note = Note.find(params[:id])
+  #   note.destroy
+  # end
+
   def destroy
     note = Note.find(params[:id])
     note.destroy
+    flash[:notice] = "商品は削除されました"
+    redirect_to root_path
   end
+
 
   def edit
     @note = Note.find(params[:id])
