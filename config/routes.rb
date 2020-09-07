@@ -7,6 +7,6 @@ Rails.application.routes.draw do
       get 'search'
     end
   end
-  resources :connections, only: [:index]
+  resources :connections
   resources :users, only: [:edit, :update]
 end

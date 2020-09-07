@@ -1,0 +1,16 @@
+.Contents
+  .Container
+    %h1 つながりを記録する
+    = form_with model: @connection, class: "Form", local:true do |form|
+      %h2 イメージ画像
+      = form.text_field :image, class:"Form__theme"
+      %h2 名前
+      = form.text_field :name, class:"Form__theme"
+      %h2 好きな物事
+      = form.text_field :preference, class: "Form__theme"
+      %h2 嫌いな物事
+      = form.text_field :dislike, class: "Form__theme"
+      %h2 その他
+      = form.text_field :details, class: "Form__details"
+      = form.submit value:"記録する", class: "Form__btn" 
+      

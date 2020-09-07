@@ -1,0 +1,35 @@
+.Wrapper
+  .Top-contents
+    %h1.Top-contents__title 
+      = "#{@nickname} の Chat Note"
+
+    = form_with url: search_notes_path, method: :get, class: "Search", local:true do |form|
+      = form.text_field :keyword, placeholder: "テーマで検索", class: "Search__field"
+      = form.submit value:"検索", class: "Search__btn"
+  
+  .Middle-contents
+    .Sidebar
+      %ul
+        %li
+          = link_to 'ネタ帳', root_path ,class: "btn"
+        %li
+          = link_to 'つながり', connections_path ,class: "btn"
+        %li
+          = link_to 'アカウント編集', edit_user_path(current_user) ,class: "btn"
+        %li
+          = link_to 'ログアウト', destroy_user_session_path, method: :delete, class: 'btn'
+        %li
+          = link_to 'つながりを登録',  new_connection_path ,class: "btn"
+    
+    .Main
+      .Main_connection-wrap
+        = image_tag("toshimasa.jpg", size: "100x100", alt: "画像", class: "connection_image")
+        %p  川崎寿優
+      
+    
+     
+      
+      
+
+  
+
