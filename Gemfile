@@ -64,3 +64,5 @@ gem 'devise'
 gem 'jquery-rails'
 
 gem 'kaminari'
+
+gem 'chartkick'

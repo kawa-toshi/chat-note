@@ -9,4 +9,5 @@ Rails.application.routes.draw do
   end
   resources :connections, only: [:index]
   resources :users, only: [:edit, :update]
+  resources :experiences
 end
