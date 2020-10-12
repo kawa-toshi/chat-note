@@ -92,7 +92,7 @@
   // メイン画面
   &__article-main{
     display: flex;
-    height: 200px;
+    height: 100%;
   }
   &__article-theme{
     text-align: center;
@@ -109,7 +109,7 @@
   .Nav_toggle {
     display: block;
     position: relative;
-    width: 1.75rem;
+    width: 50px;
     height: 1.5rem;
     left: 20px;
     top: 8px;
@@ -147,7 +147,7 @@
     transition: opacity .5s, visibility .5s;
     
     &__menu-ul{
-      width: 100px;
+      width: 50px;
     }
     &__menu-li{
       color: white;
@@ -212,7 +212,7 @@
   .Nav_toggle-show {
     display: block;
     position: relative;
-    width: 1.75rem;
+    width: 50px;
     height: 1.5rem;
     left: 20px;
     top: 8px;

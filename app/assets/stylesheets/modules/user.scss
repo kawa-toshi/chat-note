@@ -1,41 +1,72 @@
+.Registration-wrapper{
+  background-image: url(chat.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100vh;
+  position: relative;
+  &:before{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: block;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0, 0.4);
+    
+  }
+  
+  &__title{
+
+    font-size: 5rem;
+    font-family: cursive;
+    border-bottom: 1px #fff solid;
+    color: #fff;
+    text-align: center;
+    font-weight: bold;
+    position: absolute;
+    left: 50%;
+    top: 20px;
+    transform: translateX(-50%);
+  }
+}
+
 .AccountPage {
-  width: 980px;
-  margin: 60px auto;
+  
+  width: 400px;
+  position: absolute;
+  top: 58%;
+  left: 50%;
+  transform: translateY(-50%) translateX(-50%);
+  margin: 0 auto;
   padding: 60px;
   background-color: #fff;
   border: 1px solid #ddd;
   border-radius: 5px;
-  display: flex;
-  justify-content: space-between;
+  text-align: center;
+  
+  // display: flex;
+  // justify-content: space-between;
+
 }
 .AccountPage__title {
-  width: 50%;
+  // width: 50%;
   font-size: 14px;
   font-weight: 200;
 
   h2 {
     margin-bottom: 10px;
     letter-spacing: 3px;
-    font-size: 40px;
-    &:after {
-      content: "";
-      display: block;
-      width: 60px;
-      margin-top: 5px;
-      border-bottom: 1px solid coral;
-    }
+    font-size: 28px;
+    
   }
 
-  .Button {
-    margin-top: 40px;
-    color: #fff;
-    background-color: #ccc;
-  }
+  
 }
 
-.AccountPage__form {
-  width: 50%;
-}
+// .AccountPage__form {
+//   width: 50%;
+// }
 
 .FormField {
   margin-bottom: 10px;
@@ -96,12 +127,22 @@
   background-color: coral;
 }
 
+
+
 #error_explanation {
-  margin: 20px 0;
-  padding: 20px 30px;
+  // margin: 20px 0;
+  // padding: 20px 30px;
   border: 1px solid #ddd;
   border-radius: 2px;
-
+  background: #fff;
+  height: 200px;
+  width: 400px;
+  position: absolute;
+  top: 25%;
+  right: 7%;
+  padding: 20px;
+  
+  // transform: translateY(-50%) translateX(-50%);
   h2 {
     margin-bottom: 10px;
     color: #d65f4c;
@@ -115,8 +156,19 @@
   }
 
   li {
-    margin: 0;
+    margin: 20px;
     padding: 0;
     font-size: 13px;
+  }
+}
+
+.Link-wrapper{
+  margin-top: 20px;
+  .Button {
+    margin-top: 20px;
+    color: #fff;
+    background-color: skyblue;
+    height: 30px;
+    line-height: 30px;
   }
 }
