@@ -15,11 +15,6 @@ class NotesController < ApplicationController
     redirect_to root_path
   end
 
-  # def destroy
-  #   note = Note.find(params[:id])
-  #   note.destroy
-  # end
-
   def destroy
     note = Note.find(params[:id])
     note.destroy
@@ -44,7 +39,12 @@ class NotesController < ApplicationController
 
   def search
     @nickname = current_user.nickname
-    @notes = Note.search(params[:keyword]).page(params[:page]).per(2)
+    @id = current_user.id
+    
+    @notes = Note.search(params[:keyword], current_user.id).page(params[:page]).per(2)
+    
+    
+    
   end
 
   private
