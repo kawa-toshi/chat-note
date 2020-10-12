@@ -6,5 +6,6 @@ class User < ApplicationRecord
 
   has_many :notes
   has_many :connections
+  has_many :experiences
   validates :nickname, presence: true, uniqueness: true
 end
