@@ -30,6 +30,8 @@ class NotesController < ApplicationController
   def update
     note = Note.find(params[:id])
     note.update(note_params)
+    flash[:notice] = "ノートは更新されました"
+    redirect_to root_path
   end
 
   def show
