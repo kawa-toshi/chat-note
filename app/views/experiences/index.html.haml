@@ -1,21 +1,42 @@
-%h1 グラフ
-= line_chart @experience.group_by_day(:created_at).sum(:number), width: "800px", height: "500px"
-
-%ul
-  %p
-    = link_to 'ネタ帳', root_path ,class: "btn2"
--if @exp.empty?
-  %p
-    = link_to '人数を記録', new_experience_path ,class: "btn2"
--else
-  -@exp.each do |experience|
-    %p
-      = link_to '今日話した人数を編集', edit_experience_path(experience.id) ,class: "btn2"
-    %p
-      = link_to '削除', experience_path(experience.id), method: :delete, class: "btn2"
-
-=@data
+.Flex-wrapper
+  .Sidebar-graph
+    %ul
+      %li
+        = link_to 'ネタ帳', root_path ,class: "btn"
+      %li
+        = link_to '話した人数グラフ', experiences_path ,class: "btn"
+      %li
+        = link_to 'アカウント編集', edit_user_path(current_user) ,class: "btn"
+      %li
+        = link_to 'ログアウト', destroy_user_session_path, method: :delete, class: 'btn'
+      %li
+        = link_to 'ネタを書く',  new_note_path ,class: "btn"
 
 
+
+
+  .Graph-wrapper
+    %h1.Graph-wrapper__title 1日に話した人数の軌跡
+    = line_chart @experience.group_by_day(:created_at).sum(:number), width: "800px", height: "500px"
+
+    -if @exp.empty?
+      %p
+        = link_to '今日話した人数を記録', new_experience_path ,class: "Btn-wrapper__btn"
+    -else
+      %p.Graph-wrapper__number-title
+        = "今日話した人数は#{@data}人です"
+    -@exp.each do |experience|
+      .Btn-wrapper
+        %p
+          = link_to '今日話した人数を編集', edit_experience_path(experience.id) ,class: "Btn-wrapper__btn"
+        %p
+          = link_to '削除', experience_path(experience.id), method: :delete, class: "Btn-wrapper__btn"
+
+
+    -# %p 
+    -#   = "今日話した人数は#{@data}人です"
+
+
+  
 
         

@@ -6,7 +6,7 @@ class ExperiencesController < ApplicationController
     # @day = Date.today 
     # @experience1 = @number.where(created_at: @day)
     # @experience = Experience.all
-    @exp = Experience.where(created_at: Date.today.all_day)
+    @exp = current_user.experiences.where(created_at: Date.today.all_day)
 
     
     @experience.each do |experience| # each文でレコードを分ける。
@@ -29,8 +29,8 @@ end
 
   def create
     Experience.create!(experience_params)
-    flash[:notice] = "数字が作成されました"
-    redirect_to root_path
+    flash[:notice] = "話した人数が作成されました"
+    redirect_to experiences_path
   end
 
   def edit
@@ -40,15 +40,15 @@ end
   def update
     experience = Experience.find(params[:id])
     experience.update(experience_params)
-    flash[:notice] = "話した人数は更新されました"
-    redirect_to root_path
+    flash[:notice] = "話した人数が更新されました"
+    redirect_to experiences_path
   end
 
   def destroy
     experience = Experience.find(params[:id])
     experience.destroy
-    flash[:notice] = "今日話した人数は削除されました"
-    redirect_to root_path
+    flash[:notice] = "話した人数は削除されました"
+    redirect_to experiences_path
   end
 
   private

@@ -1,8 +1,9 @@
 .Contents
   .Container
-    %h1 ネタを記録する
-    = form_with model: @experience, class: "Form", local:true do |form|
-      %h2 話した人数
-      = form.text_area :number,placeholder: "ちょっとしたネタ(その日あった出来事, 読んだ本, etc...)",  class: "Form__details"
-      = form.submit value:"記録する", class: "Form__btn" 
+    %h1 話した人数を記録する
+    = form_with model: @experience, class: "Graph-form", local:true do |form|
+      %h2.Graph-form__title 話した人数
+      .Graph-form__wrapper
+        = form.text_field :number,  class: "Graph-form__details"
+        = form.submit value:"記録する", class: "Graph-form__btn" 
       

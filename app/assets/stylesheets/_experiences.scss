@@ -1,0 +1,84 @@
+// Place all the styles related to the experiences controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.Sidebar-graph{
+  background-color: orangered;
+  height: 100vh;
+  width:300px;
+  
+  
+}
+
+.Flex-wrapper{
+  display: flex;
+}
+
+.Graph-wrapper{
+  margin: 0 auto;
+  &__title{
+    font-size: 20px;
+    margin: 40px auto;
+    text-align: center;
+  }
+  &__number-title{
+    font-size: 40px;
+    text-align: center;
+    margin: 40px 0;
+  }
+}
+.Btn-wrapper{
+  display: flex;
+  justify-content: space-around;
+  margin: 40px auto;
+  &__btn{
+    color: white;
+    text-decoration: none;
+    background: coral;
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+    border-radius: 50px;
+    display: block;
+    margin:30px auto;
+    width: 200px;
+  }
+}
+
+// 人数入力画面
+.Graph-form{
+  height: 600px;
+  &__wrapper{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateY(-50%) translateX(-50%);
+  }
+  &__details{
+    text-align: center;
+    width: 60px;
+    height: 60px;
+    margin: 20px;
+  }
+  &__title{
+    margin-top: 120px;
+  }
+  &__btn{
+    color: white;
+    text-decoration: none;
+    background: coral;
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+    border-radius: 50px;
+    display: block;
+    margin:30px auto;
+    width: 200px;
+    border: none;
+  }
+}
+
+
+// #chart-1{
+//   margin: 0 auto;
+// }
