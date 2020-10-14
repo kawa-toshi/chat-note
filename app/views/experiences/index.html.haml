@@ -1,1 +1,21 @@
 %h1 グラフ
+= line_chart @experience.group_by_day(:created_at).sum(:number), width: "800px", height: "500px"
+
+%ul
+  %p
+    = link_to 'ネタ帳', root_path ,class: "btn2"
+-if @exp.empty?
+  %p
+    = link_to '人数を記録', new_experience_path ,class: "btn2"
+-else
+  -@exp.each do |experience|
+    %p
+      = link_to '今日話した人数を編集', edit_experience_path(experience.id) ,class: "btn2"
+    %p
+      = link_to '削除', experience_path(experience.id), method: :delete, class: "btn2"
+
+=@data
+
+
+
+        

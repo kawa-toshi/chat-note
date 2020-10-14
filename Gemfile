@@ -66,3 +66,5 @@ gem 'jquery-rails'
 gem 'kaminari'
 
 gem 'chartkick'
+
+gem 'groupdate'
