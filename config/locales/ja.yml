@@ -1,5 +1,9 @@
 ja:
   activerecord:
+    attributes:
+      note:
+        theme: テーマ
+        details: 内容
     errors:
       messages:
         record_invalid: 'バリデーションに失敗しました: %{errors}'
@@ -204,3 +208,6 @@ ja:
       long: "%Y/%m/%d %H:%M"
       short: "%m/%d %H:%M"
     pm: 午後
+
+  
+  
