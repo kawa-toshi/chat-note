@@ -10,16 +10,6 @@ class NotesController < ApplicationController
   end
 
   def create
-    # Note.create!(note_params)
-    # flash[:notice] = "ノートが作成されました"
-    # redirect_to root_path
-
-    # if Note.create!(note_params)
-    #   flash[:notice] = "ノートが作成されました"
-    #   redirect_to controller: :notes, action: :index
-    # else
-    #   render "new"
-    # end
 
     @note = Note.new(note_params)
     if @note.save
@@ -43,10 +33,17 @@ class NotesController < ApplicationController
   end
 
   def update
-    note = Note.find(params[:id])
-    note.update(note_params)
-    flash[:notice] = "ノートは更新されました"
-    redirect_to root_path
+    # note = Note.find(params[:id])
+    # note.update(note_params)
+    # flash[:notice] = "ノートは更新されました"
+    # redirect_to root_path
+    @note = Note.find(params[:id])
+    if @note.update(note_params)
+      flash[:notice] = "ノートが更新されました"
+      redirect_to controller: :notes, action: :index
+    else
+      render "edit"
+    end
   end
 
   def show
