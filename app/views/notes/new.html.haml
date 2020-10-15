@@ -3,8 +3,10 @@
     %h1 ネタを記録する
     = form_with model: @note, class: "Form", local:true do |form|
       %h2 テーマ
-      = form.text_field :theme, placeholder: "ネタのテーマ(スポーツ, 旅行, 季節 , 趣味, etc...)", class:"Form__theme"
+      = form.text_field :theme, placeholder: "ネタのテーマ(スポーツ, 旅行, 季節 , 趣味, etc...)                 30文字以内", class:"Form__theme"
       %h2 詳細
-      = form.text_area :details,placeholder: "ちょっとしたネタ(その日あった出来事, 読んだ本, etc...)",  class: "Form__details"
+      = form.text_area :details,placeholder: "ちょっとしたネタ(その日あった出来事, 読んだ本, etc...)      500文字以内" ,  class: "Form__details"
       = form.submit value:"記録する", class: "Form__btn" 
-      
+
+
+      =  render 'layouts/error_messages', model: form.object

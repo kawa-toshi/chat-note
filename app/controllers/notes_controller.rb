@@ -10,9 +10,24 @@ class NotesController < ApplicationController
   end
 
   def create
-    Note.create!(note_params)
-    flash[:notice] = "ノートが作成されました"
-    redirect_to root_path
+    # Note.create!(note_params)
+    # flash[:notice] = "ノートが作成されました"
+    # redirect_to root_path
+
+    # if Note.create!(note_params)
+    #   flash[:notice] = "ノートが作成されました"
+    #   redirect_to controller: :notes, action: :index
+    # else
+    #   render "new"
+    # end
+
+    @note = Note.new(note_params)
+    if @note.save
+      flash[:notice] = "ノートが作成されました"
+      redirect_to controller: :notes, action: :index
+    else
+      render "new"
+    end
   end
 
   def destroy
