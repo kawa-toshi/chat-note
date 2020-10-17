@@ -5,8 +5,11 @@
 .Sidebar-graph{
   background-color: orangered;
   height: 100vh;
-  width:300px;
-  
+  // width:300px;
+  flex-grow: 3;
+  ul{
+    margin-top: 100px;
+  }
   
 }
 
@@ -16,6 +19,7 @@
 
 .Graph-wrapper{
   margin: 0 auto;
+  flex-grow: 9;
   &__title{
     font-size: 20px;
     margin: 40px auto;
@@ -79,6 +83,6 @@
 }
 
 
-// #chart-1{
-//   margin: 0 auto;
-// }
+#chart-1{
+  margin: 0 auto;
+}
