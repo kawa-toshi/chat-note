@@ -2,7 +2,14 @@ class NotesController < ApplicationController
   
   def index
     @nickname = current_user.nickname
-    @notes = current_user.notes.includes(:user).page(params[:page]).per(2).order("created_at DESC")
+    sort = params[:sort] || "created_at DESC"
+    @notes = current_user.notes.includes(:user).page(params[:page]).per(2).order(sort)
+    
+    if params[:option] == "created_at_desc" || params[:option] == nil
+      @notes = current_user.notes.includes(:user).page(params[:page]).per(2).order('created_at DESC')
+    elsif params[:option] == "created_at_asc"    
+      @notes = current_user.notes.includes(:user).page(params[:page]).per(2).order('created_at ASC')
+    end
   end
 
   def new
@@ -54,9 +61,11 @@ class NotesController < ApplicationController
   def search
     @nickname = current_user.nickname
     @id = current_user.id
+    sort = params[:sort] || "created_at DESC"
+    @notes = Note.search(params[:keyword], current_user.id).page(params[:page]).per(2).order(sort)
     
-    @notes = Note.search(params[:keyword], current_user.id).page(params[:page]).per(2)
-    
+    # sort = params[:sort] || "created_at DESC"
+    # @notes = current_user.notes.includes(:user).page(params[:page]).per(2).order(sort)
     
     
   end

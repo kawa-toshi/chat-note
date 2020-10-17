@@ -1,1 +1,67 @@
-= render partial: 'main-note'
+.Wrapper
+  .Top-contents
+    %h1.Top-contents__title 
+      = "#{@nickname} の Chat Note"
+
+    = form_with url: search_notes_path, method: :get, class: "Search", local:true do |form|
+      = form.text_field :keyword, placeholder: "テーマで検索", class: "Search__field"
+      = form.submit value:"検索", class: "Search__btn"
+  
+  .Middle-contents
+    .Sidebar
+      %ul
+        %li
+          = link_to 'ネタ帳', root_path ,class: "btn"
+        %li
+          = link_to '話した人数グラフ', experiences_path ,class: "btn"
+        %li
+          = link_to 'アカウント編集', edit_user_path(current_user) ,class: "btn"
+        %li
+          = link_to 'ログアウト', destroy_user_session_path, method: :delete, class: 'btn'
+        %li
+          = link_to 'ネタを書く',  new_note_path ,class: "btn"
+    
+    .Main-wrapper
+      .Main
+        
+        - @notes.each do |note|
+          .Main__article.fadeInUp
+            .Main__article-main
+              .Main__article-main-wrapper
+                %h1.Main__article-theme= note.theme
+                %p.Main__article-date= note.created_at.strftime('%Y/%m/%d')
+                %p.Main__article-details= truncate(note.details, :length => 226)
+              %span.Nav_toggle
+                %i  
+                %i
+                %i
+                %nav.Nav
+                  %ul.Nav__menu-ul
+                    %li.Nav__menu-li 
+                      = link_to '編集', edit_note_path(note.id), method: :get, class: "Nav__menu-li"
+                    %li.Nav__menu-li 
+                      = link_to '削除', note_path(note.id), method: :delete, class: "Nav__menu-li"
+                    %li.Nav__menu-li 
+                      = link_to '詳細', note_path(note.id), method: :get, class: "Nav__menu-li"
+        = paginate @notes
+      -# .Sort
+      -#   %select.Sort__search{:name => "search"}
+      -#     %option{:value => "basis"} ソート
+      -#     %option{:value => "created_at_desc"} 投稿日時が新しい順
+      -#     %option{:value => "created_at_asc"} 投稿日時が古い順
+
+      .Sort
+        %select.Sort__search{name: :sort_order, class: 'sort_order'}
+          %option{value: "location.pathname", name: "location.pathname"} 
+            ソート
+          -# %option{value: "price_asc"}
+          -#   価格の安い順
+          -# %option{value: "price_desc"}
+          -#   価格の高い順
+          %option{value: "created_at_asc"}
+            投稿日の古い順
+          %option{value: "created_at_desc"}
+            投稿日の新しい順
+
+      -# = paginate @notes
+      

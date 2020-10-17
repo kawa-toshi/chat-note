@@ -47,10 +47,12 @@
 
 .Sidebar{
   background-color: orangered;
-  height: 100vh;
-  width:300px;
-  position: fixed;
-  top: 100px;
+  // height: 100vh;
+  flex-grow: 2;
+  // position: fixed;
+  // top: 100px;
+  height: calc(100vh - 100px);
+  
 }
 
 .btn{
@@ -67,18 +69,42 @@
   }
 }
 
+.Main-wrapper{
+  display: flex;
+  // width: calc(100vw - 300px);
+  flex-grow: 8;
+}
+.Sort{
+  // width:200px;
+  flex-grow: 1;
+  &__search{
+    margin:20px 0 0 0;
+    // padding:10px;
+    // width: 5%;
+    // position: fixed;
+    text-align: center;
+    color: white;
+    background-color: orangered;
+    border: none;
+    padding: 10px;
+    border-radius: 2px;
+  }
+}
+
+
 .Main{
   display: flex;
   flex-direction: column;
   justify-content: center;
-  margin-left:300px;
-  width: calc(100vw - 300px);
+  // margin-left:300px;
+  // width: calc(100vw - 300px);
   background-color: rgb(116, 17, 17);
+  flex-grow: 9;
   
 
   &__article{
     width: 500px;
-    height: 400px;
+    height: 300px;
     margin: 30px auto 30px;
     border: 1px solid white;
     color: white;
@@ -184,10 +210,10 @@
 // 詳細画面
 .Main-show{
   
-  margin-left:300px;
-  width: calc(100vw - 300px);
-  height: 100vh;
-  
+  // margin-left:300px;
+  // width: calc(100vw - 300px);
+  // height: 100vh;
+  flex-grow: 6;
 
   
   

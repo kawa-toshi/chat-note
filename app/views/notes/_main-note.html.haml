@@ -21,25 +21,35 @@
         %li
           = link_to 'ネタを書く',  new_note_path ,class: "btn"
     
-    .Main
+    .Main-wrapper
+      .Main
+        
+        - @notes.each do |note|
+          .Main__article.fadeInUp
+            .Main__article-main
+              .Main__article-main-wrapper
+                %h1.Main__article-theme= note.theme
+                %p.Main__article-date= note.created_at.strftime('%Y/%m/%d')
+                %p.Main__article-details= truncate(note.details, :length => 226)
+              %span.Nav_toggle
+                %i  
+                %i
+                %i
+                %nav.Nav
+                  %ul.Nav__menu-ul
+                    %li.Nav__menu-li 
+                      = link_to '編集', edit_note_path(note.id), method: :get, class: "Nav__menu-li"
+                    %li.Nav__menu-li 
+                      = link_to '削除', note_path(note.id), method: :delete, class: "Nav__menu-li"
+                    %li.Nav__menu-li 
+                      = link_to '詳細', note_path(note.id), method: :get, class: "Nav__menu-li"
+        = paginate @notes
+      .Sort
+        %select.Sort__search{:name => "search"}
+          %option{:value => "basis"} ソート
+          %option{:value => "created_at_desc"} 投稿日の新しい順
+          %option{:value => "created_at_asc"} 投稿日の古い順
+
+
+      -# = paginate @notes
       
-      - @notes.each do |note|
-        .Main__article.fadeInUp
-          .Main__article-main
-            .Main__article-main-wrapper
-              %h1.Main__article-theme= note.theme
-              %p.Main__article-date= note.created_at.strftime('%Y/%m/%d')
-              %p.Main__article-details= truncate(note.details, :length => 310)
-            %span.Nav_toggle
-              %i  
-              %i
-              %i
-              %nav.Nav
-                %ul.Nav__menu-ul
-                  %li.Nav__menu-li 
-                    = link_to '編集', edit_note_path(note.id), method: :get, class: "Nav__menu-li"
-                  %li.Nav__menu-li 
-                    = link_to '削除', note_path(note.id), method: :delete, class: "Nav__menu-li"
-                  %li.Nav__menu-li 
-                    = link_to '詳細', note_path(note.id), method: :get, class: "Nav__menu-li"
-      = paginate @notes
