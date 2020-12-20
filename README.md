@@ -41,6 +41,7 @@ https://chat-note.herokuapp.com/users/sign_in
 
 - has_many :notes
 - has_many :connections
+- has_many :experiences
 
 ## connections テーブル
 
@@ -64,7 +65,6 @@ https://chat-note.herokuapp.com/users/sign_in
 
 ### Association
 
-- belongs_to :group
 - belongs_to :user
 
 ## experiences テーブル
@@ -73,3 +73,7 @@ https://chat-note.herokuapp.com/users/sign_in
 | ------- | ------- | ------------------------------ |
 | number  | integer | null: false                    |
 | user_id | integer | null: false, foreign_key: true |
+
+### Association
+
+- belongs_to :user
