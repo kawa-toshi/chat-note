@@ -37,10 +37,10 @@ $(function(){
     $('.Nav_toggle-show, .Nav-show').toggleClass('show');
   });
 });
- 
+
 // flash Message
 $(function(){
-  setTimeout("$('.notification').fadeOut('slow')", 2000) 
+  setTimeout("$('.notification').fadeOut('slow')", 2000)
 });
 
 
