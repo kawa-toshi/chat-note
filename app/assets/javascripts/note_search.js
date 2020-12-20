@@ -18,7 +18,7 @@ $(function() {
     };
     // 現在の表示ページ
     var current_html = window.location.href;
-    // ソート機能の重複防止 
+    // ソート機能の重複防止
     if (location['href'].match(/&sort=*.+/) != null) {
       var remove = location['href'].match(/&sort=*.+/)[0]
       var current_html = current_html.replace(remove, '')
@@ -51,10 +51,10 @@ $(function() {
 
 // 元からあるノートのそーと
 $(function(){
-  
-  const selected = $('select[name=search]')
+
+  const selected = $('select[name=search]');
+
   selected.change(function(value) {
-    
     window.location.replace('/?option=' + selected.val());
   });
 
@@ -71,9 +71,7 @@ $(function(){
         var sort = 1
       } else if (selected_option == "created_at_asc") {
         var sort = 2
-      } 
-      
-
+      }
       var add_selected = $('select[name=search]').children()[sort]
       $(add_selected).attr('selected', true)
     }
